@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}
+	Home 		
+{% endblock %}
+{% block content %}
+<h2>Latest Additions</h2>
+<p>Welcome to Gapp.Sites, a showcase of sites powered by Google App Engine.</p>	
+	{% for website in websites %}
+	{% include "_website_preview.html" %}
+	{% endfor %}
+{% endblock %}

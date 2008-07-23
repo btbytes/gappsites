@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}
+{{website.title}}
+{% endblock %}
+{% block content %}
+<h2>{{website.title}}</h2>
+<div id="website-desc" class="yui-u">
+	{{website.deschtml}}
+	<p><b>Votes:</b> {{website.votes}}</p>
+	<p><b>Tags:</b> 
+	{% for t in website.tags %}
+		<a href="/tag/{{t}}/">{{t}},</a>
+	{% endfor %}
+	</p><p><b>Visit </b> this website at <a href="{{website.link}}">{{website.link}}</a>
+	</p><p><b>Owned </b> by <a href="/user/{{website.author}}">{{website.author}}</a>
+	</p>
+
+	{% if users.is_current_user_admin %}
+		<div id="website-admin" class="floatbox">
+			<h4>Administrative Tasks</h4>
+			<ul>
+				<li><a href="/newthumb/{{website.key}}/">Request new thumbnail</a></li>
+				{% if website.is_public %}
+					<li><a href="/hide/{{website.key}}/">Hide site</a></li>
+				{% else %}
+					<li><a href="/show/{{website.key}}/">Make public</a></li>
+				{% endif %}
+			
+			</ul>
+		</div>
+	{% endif %}
+</div>
+<div id="website-rate" class="yui-u">
+<img src="/img/{{website.key}}.jpg" title="Screenshot of {{website.link}}"/>
+
+{% ifnotequal user website.author %}
+  <a href="/voteup/{{website.key}}/"><img src="/static/img/likeit.png" alt="I like it"></a>
+{% endifnotequal %}
+
+</div>
+
+{% endblock %}

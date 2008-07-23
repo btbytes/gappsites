@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}
+	Submit
+{% endblock %}
+
+{% block content %}
+<h2>Submit A Site</h2>
+<p>Got a website that's powered by Google App Engine? Enter the website details below and it'll be added to our index.</p>
+
+   <p>Because we display beautiful thumbnails of websites on our homepage, for safety reasons we <strong>manually verify all submissions</strong>. As such, please allow up to 48 hours for your website to be checked.</p>
+
+   <p><strong>Is your site already listed?</strong> Don't re-submit it just to make changes. <a href='/author/'>View your pages profile</a> and click the 'Edit' link to make changes.</p>
+<form action="./" method="post">
+   <ul></ul>
+
+   <fieldset>
+       <legend>Submit A Site</legend>
+
+       <p><label for="id_title" class="required">Title:</label><br><input id="id_title" type="text" name="title" maxlength="100" /><br>The title of your website</p>
+
+       <p><label for="id_url" class="required">URL:</label><br><input id="id_url" type="text" name="link" maxlength="200" /><br>Your websites URL (Must be accessible from the world wide web, no HTTPS.)</p>
+
+
+       <p><label for="id_description" class="required">Description:</label><br><textarea id="id_description" rows="10" cols="40" name="description"></textarea><br>A brief summary of your website (Markdown is permitted). Please keep your description in English, or in your native language with an English translation.</p>
+
+       <p><label for="id_tags" class="">Tags:</label><br><input id="id_tags" type="text" name="tagsrc" maxlength="255" /><br>Space-separated tags describing your website. We would love if you could use at least "personal" or "business". <strong>Website not in english?</strong> Please include a tag stating the language, e.g. "french" or "sudanese".</p>
+
+ <p><label for="id_source_url" class="">Source Code URL:</label><br><input id="id_source_url" type="text" name="srclink" maxlength="200" /><br>If the source code is available for this website, put the URL to the source code (or a website containing the code) here. This is purely optional.</p>
+
+       <p><input type="submit" value="Add Site" class="send"></p>
+
+   </fieldset>               
+</form>
+
+
+</div>
+
+{% endblock %}

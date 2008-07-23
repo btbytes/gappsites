@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<link rel="stylesheet" href="http://yui.yahooapis.com/2.5.1/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css">
+	<link rel="stylesheet" href="http://www.zap.org.au/documents/styles/sinorcaish/example/sinorcaish-screen.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<link href="/static/css/style.css" rel="stylesheet" type="text/css">
+	
+ 	<title>{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+	<div id="doc3" class="yui-t6">
+	   <div id="hd"><h1><a href="/">GApp.Sites</a></h1>
+		</div>
+		<div id="sitenav" class="nav">
+			{% include "_sitenav.html" %}
+		</div>
+		  <div id="usernav" class="nav">
+ 			{% if user %}
+    			{% include "_usernav.html" %}
+			{% else %}
+				<ul class="navlinks"><li><a href="/login/">Login</a></li></ul>
+			{% endif %}
+		  </div>
+		
+	   <div id="bd">
+		 <div id="yui-main">
+		   <div class="yui-b" id="main">
+				<div class="yui-g">
+					{% if message %}
+						<div class="highlight">
+						<p>{{message}}</p>
+						</div>
+					{% endif %}
+					{% block content %}
+					{% endblock %}
+		   		</div>
+	      </div>
+	   </div>
+	   <div class="yui-b" id="side">
+		{% block sidebar %}
+			<h3>TAGS</h3>
+			{% include "_tags.html" %}
+		{% endblock %}
+		</div>
+	</div>
+	
+	   <div id="ft">
+		<p>
+	   	Copyright &copy; <a href="http://github.com/btbytes/gappsites/wikis">GAppSites</a><br/>
+		Website built by <a href="http://pradeepgowda.com/">Pradeep Gowda</a>, powered by 
+		<a href="http://code.google.com/appengine/">Google App Engine</a>. 
+		</p>
+	   </div>
+	
+	</div>
+	
+</body>
+</html>

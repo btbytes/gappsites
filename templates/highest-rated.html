@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}
+	Highest rated
+{% endblock %}
+
+{% block content %}
+	<h2>Highest rated sites</h2>
+	{% for website in websites %}
+	<h3><span style="margin-right:0.5em; color:#993333;">#{{forloop.counter}}</span><a href="{{website.link}}">{{website.title}}</a></h3>
+	<a href="/s/{{website.key}}/"><img src="/img/{{website.key}}.jpg" title="Screenshot of {{website.link}}"/></a>
+	
+	{% endfor %}
+{% endblock %}

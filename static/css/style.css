@@ -1,0 +1,111 @@
+HTML>BODY, HTML>BODY#doc3 {
+	font-size: 11.7px;
+	background:white;
+}
+/* *** LAYOUT *** */
+legend{
+    border:none;
+}
+input{
+    margin-top:0.2em;
+    background:#fff;
+}
+label{
+    font-weight:bold;
+}
+#side{
+
+}
+#doc3 {
+
+}
+#hd {
+   background:#336699;
+   padding:10px;
+}
+#hd h1{
+    font-size:2.6em;
+    margin:0em;
+}
+#hd a{
+    color:#fff;
+    text-decoration:none;
+}
+.nav{
+    background: #348899;
+}
+#sitenav{
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+#usernav{
+    background-color:#999;
+    margin-top:0px;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    text-align:right;
+}
+.navlinks{
+    margin:0em;
+    display:block ;
+}
+.navlinks li {
+    display: inline;
+    list-style-type: none;
+    padding-right: 20px;
+}
+.navlinks li a{
+    font-size:1.2em;
+    color:#F2EBC7;
+}
+
+#main {
+    margin-left:0px;
+    padding:0.5em;
+    border:none;
+    background:transparent;
+}
+#ft {
+   height:60px;   /* Height of the footer */
+   padding-top:0.5em;
+   border-top: solid 4px #979c9c;
+   background: #ddd;
+}
+#ft p{
+    margin-left:0.5em;
+}
+#ft a{
+    color:#000;
+}
+
+<!--[if lt IE 7]>
+	<style media="screen" type="text/css">
+    /* <!-- */
+	#doc3 {
+		height:100%;
+	}
+	/* --> */
+</style>
+
+
+/* tag */
+span.tc1 {font-size:6pt;}
+span.tc2 {font-size:7pt;}
+span.tc3 {font-size:8pt;}
+span.tc4 {font-size:9pt;}
+span.tc5 {font-size:10pt;}
+span.tc6 {font-size:11pt;}
+span.tc7 {font-size:12pt;}
+span.tc8 {font-size:13pt;}
+span.tc9 {font-size:14pt;}
+span.tc10 {font-size:15pt;}
+span.tc11 {font-size:16pt;}
+span.tc12 {font-size:17pt;}
+span.tc13 {font-size:18pt;}
+span.tc14 {font-size:19pt;}
+span.tc15 {font-size:20pt;}
+span.tc16 {font-size:21pt;}
+span.tc17 {font-size:22pt;}
+span.tc18 {font-size:23pt;}
+span.tc19 {font-size:24pt;}
+span.tc20 {font-size:25pt;}

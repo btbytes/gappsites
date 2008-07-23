@@ -1,0 +1,5 @@
+{% get_tag_list %}
+
+{% for tag in all_tags %}
+	<span class="tag tc{{tag.entrycount}}" ><a href="/tag/{{tag.tag}}/">{{tag.tag}}</a></span>
+{% endfor %}
