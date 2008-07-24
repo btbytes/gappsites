@@ -20,7 +20,7 @@ label{
 
 }
 #hd {
-   background:#336699;
+   background:#336699 url('/static/img/bg2.png') repeat-x;
    padding:10px;
 }
 #hd h1{
@@ -32,14 +32,14 @@ label{
     text-decoration:none;
 }
 .nav{
-    background: #348899;
+  background: #993366 url('/static/img/bg1.png') repeat-x;
 }
 #sitenav{
+    background: #996633 url('/static/img/bg3.png') repeat-x;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
 }
 #usernav{
-    background-color:#999;
     margin-top:0px;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
