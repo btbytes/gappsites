@@ -11,10 +11,12 @@
 	{% for t in website.tags %}
 		<a href="/tag/{{t}}/">{{t}},</a>
 	{% endfor %}
-	</p><p><b>Visit </b> this website at <a href="{{website.link}}">{{website.link}}</a>
+	</p><p><b>Visit </b> this website at <a href="{{website.link}}">{{website.link}}</a>	
 	</p><p><b>Owned </b> by <a href="/user/{{website.author}}">{{website.author}}</a>
 	</p>
-
+	{% if website.srclink %}
+		<p><b>Source </b> <a href="{{website.srclink}}">{{website.srclink}}</a></p>
+	{% endif %}
 	{% if users.is_current_user_admin %}
 		<div id="website-admin" class="floatbox">
 			<h4>Administrative Tasks</h4>

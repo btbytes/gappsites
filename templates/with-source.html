@@ -4,5 +4,10 @@
 {% endblock %}
 
 {% block content %}
-	<h2>With source</h2>
+	<h2>Sites with source</h2>
+	<p class="floatbox">This feature is yet unfinished.</p>
+	{% for website in websites %}
+	<h3><a href="{{website.link}}">{{website.title}}</a></h3>
+	<a href="/s/{{website.key}}/"><img src="/img/{{website.key}}.jpg" title="Screenshot of {{website.link}}"/></a>
+	{% endfor %}
 {% endblock %}

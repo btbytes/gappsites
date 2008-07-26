@@ -26,10 +26,9 @@ class WebSite(db.Model):
     author = db.UserProperty()
     title = db.StringProperty(required=True)
     link = db.LinkProperty(required=True)
-    slug = db.StringProperty()
     description = db.TextProperty(required=True)
     tags = db.ListProperty(db.Category)
-    srclink = db.LinkProperty()
+    srclink = db.StringProperty() #XXX
     is_public = db.BooleanProperty(required=True, default=False)
     screencap = db.BlobProperty()
     created = db.DateTimeProperty(auto_now_add=True)

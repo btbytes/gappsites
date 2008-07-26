@@ -44,7 +44,6 @@ class SubmitSite(BaseRequestHandler):
         tagsrc = self.request.get("tagsrc")
         srclink = escape(self.request.get("srclink"))
         deschtml = markdown2.markdown(description)
-        if not srclink: srclink = link
         tags = tagsrc.split(' ')
         
         ws = WebSite(author=author, title=title, link=link,
@@ -67,6 +66,7 @@ class HighestRated(BaseRequestHandler):
 
 class WithSource(BaseRequestHandler):
     def get(self):
+        websites = WebSite.gql('WHERE is_public=True  ORDER BY created ')
         self.render('with-source.html')
     
 class About(BaseRequestHandler):
