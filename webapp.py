@@ -75,7 +75,7 @@ class About(BaseRequestHandler):
 
 class UserProfile(BaseRequestHandler):
     def get(self, userid):
-        websites = WebSite.gql('WHERE is_public=True  and author=:1 ORDER BY created ', userid)
+        websites = WebSite.gql('WHERE is_public=True  and author=:1 ORDER BY created DESC ', userid)
         self.render('userprofile.html', websites=websites)
     
 class ReviewSites(BaseRequestHandler):
