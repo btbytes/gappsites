@@ -42,7 +42,7 @@ class WebSite(db.Model):
     def set_tags(self, tags):
         if tags:
             tags = tags.strip(' ')
-            tags = [db.Category(urllib.quote(tag.strip().encode('utf8'))) for tag in tags.split(' ')]
+            tags = [db.Category(urllib.quote(tag.strip())) for tag in tags.split(' ')]
             self.tags = [tag for tag in tags if not tag in self.tags]
   
     tags_spc = property(get_tags,set_tags)
@@ -51,7 +51,7 @@ class WebSite(db.Model):
         if self.tags: 
             for tag in self.tags:
                 tag_ = urllib.unquote(tag)
-                tags = Tag.all().filter('tag',tag_).fetch(1) #64k RAM should be enough for anybody
+                tags = Tag.all().filter('tag',tag_).fetch(1) 
                 if tags == []:
                     tagnew = Tag(tag=tag_,entrycount=1)
                     tagnew.put()

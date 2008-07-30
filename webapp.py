@@ -47,7 +47,7 @@ class SubmitSite(BaseRequestHandler):
         tags = tagsrc.split(' ')
         
         ws = WebSite(author=author, title=title, link=link,
-            description=description, srclink=srclink, is_public=True,
+            description=description, srclink=srclink, is_public=False,
             deschtml=deschtml)
         ws.update_screencap()
         ws.tags_spc = tagsrc
@@ -74,9 +74,15 @@ class About(BaseRequestHandler):
         self.render('about.html')
 
 class UserProfile(BaseRequestHandler):
-    def get(self):
-        self.render('userprofile.html')
+    def get(self, userid):
+        websites = WebSite.gql('WHERE is_public=True  and author=:1 ORDER BY created ', userid)
+        self.render('userprofile.html', websites=websites)
     
+class ReviewSites(BaseRequestHandler):
+    def get(self):
+        websites = WebSite.gql('WHERE is_public=False ORDER BY created ')
+        self.render('reviewsites.html', websites=websites)
+        
 class LoginHandler(BaseRequestHandler):
     def get(self):
         user = users.get_current_user()
@@ -177,6 +183,7 @@ def main():
          (r'/about/', About),
          (r'/submit/', SubmitSite),
          (r'/user/(.*)/$', UserProfile),
+         (r'/review/', ReviewSites),
          ],
         debug=True)
   wsgiref.handlers.CGIHandler().run(application)

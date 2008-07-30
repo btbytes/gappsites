@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% block title %}
-	User profile
+Review Sites
 {% endblock %}
 
 {% block content %}
-	<h2>Sites submitted by  <em>{{author}}</em></h2>
+	<h2>Review Submitted sites</h2>
 	{% for website in websites %}
 	{% include "_website_preview.html" %}
 	{% endfor %}

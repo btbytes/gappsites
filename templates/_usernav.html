@@ -1,5 +1,7 @@
 <ul class="navlinks">
+	{% if users.is_current_user_admin %}
+	<li><a href="/review/">Review Sites</a></li>
+	{% endif %}
 	<li><a href="/submit/">Submit</a></li>
 	<li><a href="/logout/">Logout</a></li>
-
 </ul>
